@@ -1,9 +1,3 @@
-Here are some use cases (abilities your project needs to have):
-
-    Create a basic HTML calculator with buttons for each digit, each of the above functions and an “Equals” key.
-        Do not worry about wiring up the JS just yet.
-        There should also be a display for the calculator, go ahead and fill it with some dummy numbers so you can get it looking right.
-        Add a “clear” button.
     Create the functions that populate the display when you click the number buttons… you should be storing the ‘display value’ in a variable somewhere for use in the next step.
     Make the calculator work! You’ll need to store the first number that is input into the calculator when a user presses an operator, and also save which operation has been chosen and then operate() on them when the user presses the “=” key.
         You should already have the code that can populate the display, so once operate() has been called, update the display with the ‘solution’ to the operation.
@@ -18,4 +12,3 @@ Here are some use cases (abilities your project needs to have):
     EXTRA CREDIT: Make it look nice! This can be a good portfolio project… but not if it’s UGLY. At least make the operations a different color from the keypad buttons.
     EXTRA CREDIT: Add a “backspace” button, so the user can undo if they click the wrong number.
     EXTRA CREDIT: Add keyboard support!
-
