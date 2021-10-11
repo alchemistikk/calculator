@@ -1,7 +1,14 @@
 let add = (x, y) => x + y;
 let subtract = (x, y) => x - y;
 let multiply = (x, y) => x * y;
-let divide = (x, y) => x / y;
+
+let divide = (x, y) => {
+  if (y === 0) {
+    return 'You can\'t divide by zero';
+  } else {
+    return x / y;
+  }
+};
 
 function operate(operator, x, y) {
   switch (operator) {
@@ -31,8 +38,7 @@ const clearOperator = document.querySelector("#clear");
 allNumbers.forEach(number => {
   number.addEventListener('click', () => {
     if (evaluated === true) {
-      displayValue = '';
-      displayNode.textContent = '';
+      displayValue = displayValue.toString();
       displayValue += (number.textContent); 
       displayNode.textContent += (number.textContent);
       evaluated = false;
@@ -45,8 +51,12 @@ allNumbers.forEach(number => {
 
 allOperators.forEach(operation => {
   operation.addEventListener('click', () => {
-    firstOperand = Number(displayValue);
     operator = operation.id;
+    if (firstOperand !== '') {
+      firstOperand = Number(displayValue);
+    } else {
+      evaluate();
+    }
     displayValue = '';
     displayNode.textContent = '';
   })
@@ -61,9 +71,9 @@ clearOperator.addEventListener('click', () => {
 function evaluate () {
   secondOperand = Number(displayValue);
   displayValue = operate(operator, firstOperand, secondOperand);
-  displayNode.textContent = operate(operator, firstOperand, secondOperand);
+  displayNode.textContent = +operate(operator, firstOperand, secondOperand).
+      toFixed(3);
   evaluated = true;
-  clearValues();
 }
 
 function clearValues () {
@@ -76,5 +86,3 @@ function clearValues () {
 function clearDisplay () {
   displayNode.textContent = '';
 }
-
-// If equals pressed, then operand pressed, set display to operand
